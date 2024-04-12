@@ -1,0 +1,366 @@
+/*  align-content
+   Before we discuss the align content we need to understand the directions of flex
+   and its main axis and cross axis.
+   our default value for flex direction is row, so our main axis is horizontal and 
+   our cross axis is vertical
+   ------------------main axis---------------->
+   |
+   |
+   |
+   |
+   |
+cross axis
+   |
+   |
+   |
+   |
+
+   in case of flex direction is column, so our main axis is vertical and our cross axis 
+   is horizontal.
+   ---------------- cross axis ----------------->
+   |
+   |
+   |
+   |
+main axis
+   |
+   |
+   |
+   |
+   |
+
+
+   so after we understand the directions lets talk about align-content,
+   align-content is same as justify-content and have same values, while 
+   align-content works on cross axis and justify-content works on main axis.
+   their Values are : flex-start   its putting all of our flex packed in the beginning of the cross axis
+                      flex-end     its putting all of our flex packed in the end of the cross axis
+                      center       its putting all of our flex packed in the center of the cross axis
+                      space-between it will put the first one in the start and the last one in the end and it will divide the spaces between then equally.
+                      space-around  it will be evenly distributed with equal spaces between them and start and end will have half the size of the space between them
+                      space-evenly  it will distribute them evenly with equal spaces at start end and between them
+                      stretch     it will be stretched in all the area of the cross axis to take the full space
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+/* Start Top Header */
+.top-header {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  background-color: #000;
+  color: #cfcfcf;
+  height: 2.5rem;
+  align-items: center;
+}
+.top-header .date {
+  background-color: #ff0000;
+  height: 2.5rem;
+  align-content: center;
+  text-align: center;
+  width: 25%;
+}
+
+.social-icons,
+.contact {
+  display: flex;
+  justify-content: flex-start;
+  width: 25%;
+}
+
+.social-icons a {
+  height: 2.5rem;
+  align-content: center;
+  padding: 0 10px;
+  border-left: 1px solid #4c4c59;
+}
+
+.hide-facebook,
+.hide-twitter,
+.hide-youtube {
+  display: none;
+}
+
+.social-icons .facebook:hover,
+.social-icons .twitter:hover,
+.social-icons .youtube:hover {
+  align-content: center;
+  text-align: center;
+  height: 2.5rem;
+}
+
+.social-icons .facebook:hover {
+  background-color: #0000ff;
+}
+
+a:hover + .hide-facebook,
+a:hover + .hide-twitter,
+a:hover + .hide-youtube {
+  display: block;
+  position: absolute;
+  top: 3.5rem;
+  background-color: #4c4c59;
+  width: 8rem;
+  height: 3rem;
+  text-align: center;
+  align-content: center;
+}
+
+a:hover + .hide-facebook {
+  left: 28vw;
+}
+
+.social-icons .twitter:hover {
+  background-color: #7f7fef;
+}
+
+a:hover + .hide-twitter {
+  left: 31vw;
+}
+
+.social-icons .youtube:hover {
+  background-color: #ff0000;
+}
+
+a:hover + .hide-youtube {
+  left: 35vw;
+}
+
+.contact a {
+  height: 2.5rem;
+  align-content: center;
+  padding: 0 10px;
+  border-left: 1px solid #4c4c59;
+}
+
+.hide-mail,
+.hide-call,
+.hide-location {
+  display: none;
+}
+
+a:hover + .hide-mail,
+a:hover + .hide-call,
+a:hover + .hide-location {
+  display: block;
+  position: absolute;
+  top: 3.5rem;
+  background-color: #4c4c59;
+  width: 8rem;
+  height: 3rem;
+  text-align: center;
+  align-content: center;
+}
+
+a:hover + .hide-mail {
+  left: 57vw;
+}
+
+a:hover + .hide-call {
+  left: 60vw;
+}
+
+a:hover + .hide-location {
+  left: 63vw;
+}
+
+.hide-search {
+  display: none;
+}
+
+button {
+  background-color: #000;
+  color: #cfcfcf;
+  border: 0;
+}
+
+button:hover + .hide-search {
+  display: block;
+  position: absolute;
+  top: 3.5rem;
+  left: 83vw;
+  background-color: #4c4c59;
+  width: 8rem;
+  height: 3rem;
+  text-align: center;
+  align-content: center;
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+}
+/* End Top Header */
+/* Start Info Header */
+.info {
+  display: flex;
+  margin: 2rem;
+  justify-content: flex-start;
+  gap: 5rem;
+  height: 8rem;
+}
+
+.info img {
+  width: 18rem;
+}
+
+.info .Managers p {
+  margin: 0.5rem;
+}
+
+.info .Managers .postion {
+  color: #5d5d60;
+}
+/* End info Header */
+/* Start Nav Header */
+section nav {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #000;
+  color: #cfcfcf;
+  height: 2.5rem;
+  align-items: center;
+}
+
+section nav a {
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 2.5rem;
+  align-content: center;
+}
+
+section nav .active {
+  background-color: #ff0000;
+}
+
+section nav a:hover {
+  background-color: #ff0000;
+}
+/* End Nav Header  */
+/* Start Section  */
+
+.section-news {
+  margin: 10px;
+  background-color: #000;
+}
+h2 {
+  color: #cfcfcf;
+  height: 2rem;
+  align-content: center;
+  padding: 0.75rem;
+}
+
+h2::after {
+  content: "";
+  border-style: solid;
+  border-width: 0.15em 0.15em 0 0;
+  display: inline-block;
+  height: 0.2em;
+  left: 0.2em;
+  position: relative;
+  top: 0.5em;
+  transform: rotate(45deg);
+  vertical-align: top;
+  width: 0.2em;
+  color: #ff0000;
+}
+h2::before {
+  content: "";
+  border-style: solid;
+  border-width: 0.15em 0.15em 0 0;
+  display: inline-block;
+  height: 0.2em;
+  left: -0.2em;
+  position: relative;
+  top: 0.4em;
+  transform: rotate(-135deg);
+  vertical-align: top;
+  width: 0.2em;
+  color: #ff0000;
+}
+
+.Egypt-News {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.egynews-active {
+  width: 100%;
+}
+
+.main-news {
+  display: flex;
+}
+
+.news-slides {
+  display: flex;
+}
+
+.Egypt-News .egynews-active img {
+  height: 10rem;
+  margin: 1rem;
+  border: 0.25rem solid #cfcfcf;
+  border-radius: 0.25rem;
+}
+
+.Egypt-News .egynews-active img:hover {
+  height: 11rem;
+}
+
+.egynews-active p,
+.egynews-slide p {
+  color: #cfcfcf;
+  margin: 1rem;
+  text-wrap: balance;
+}
+
+.main-slide {
+  display: flex;
+}
+
+.col,
+.egynews-slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.Egypt-News a,
+.egynews-slide a {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #ff0000;
+  color: #cfcfcf;
+  width: 8rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.main-slide {
+  margin-bottom: 2rem;
+}
+
+.main-slide img {
+  height: 10rem;
+  width: 12rem;
+  margin: 1rem;
+  border: 0.25rem solid #cfcfcf;
+  border-radius: 0.25rem;
+  align-items: center;
+}
+
+.main-slide img:hover {
+  height: 11rem;
+  width: 13rem;
+}
